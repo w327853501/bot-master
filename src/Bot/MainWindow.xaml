@@ -1,0 +1,12 @@
+﻿<Window x:Class="Bot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="419*"/>
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+</Window>

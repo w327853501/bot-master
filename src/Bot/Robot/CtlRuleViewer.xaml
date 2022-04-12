@@ -1,0 +1,29 @@
+<UserControl
+	x:Class="Bot.Robot.CtlRuleViewer" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:Bot.Robot" 
+    xmlns:ctl="clr-namespace:Bot.Common.TreeviewHelper">
+	<ctl:CtlTreeView
+		x:Name="tvRule"
+		EvDoubleClickLeafNode="tvRule_EvDoubleClickLeafNode">
+		<FrameworkElement.ContextMenu>
+			<ContextMenu>
+				<MenuItem
+					Header="新建规则"
+					Click="btnNew_Click" />
+				<MenuItem
+					Header="新建规则分组"
+					Click="btnNewCata_Click" />
+				<MenuItem
+					Header="编辑"
+					Click="btnEdit_Click" />
+				<MenuItem
+					Header="删除"
+					Click="btnDelete_Click" />
+			</ContextMenu>
+		</FrameworkElement.ContextMenu>
+	</ctl:CtlTreeView>
+</UserControl>

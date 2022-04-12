@@ -1,0 +1,114 @@
+<c:EtWindow
+	x:Class="Bot.Robot.WndRobotRuleManager" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:Bot.Robot" 
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" 
+    xmlns:c="clr-namespace:Bot.Common.Windows" 
+    xmlns:ctl="clr-namespace:Bot.Common.TreeviewHelper" 
+	c:Loaded="EtWindow_Loaded"
+	c:Closed="EtWindow_Closed"
+	c:Title="机器人规则管理器"
+	Height="600"
+	Width="850">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<RoutedUICommand
+				x:Key="cmdDelete" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<UIElement.CommandBindings>
+		<CommandBinding
+			Command="{StaticResource cmdDelete}"
+			Executed="Command_Delete" />
+	</UIElement.CommandBindings>
+	<UIElement.InputBindings>
+		<KeyBinding
+			Key="Delete"
+			Command="{StaticResource cmdDelete}" />
+	</UIElement.InputBindings>
+	<Grid
+		Name="grdMain"
+		Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="auto" />
+			<RowDefinition
+				Height="auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Orientation="Horizontal"
+			Grid.Row="0"
+			Margin="0 0 0 2">
+			<Button
+				Name="btnNew"
+				Content="新建规则"
+				Padding="10 5"
+				Click="btnNew_Click" />
+			<Button
+				Content="新建分组"
+				ToolTip="双击同类词，可直接编辑"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnNewCata_Click" />
+			<Button
+				Content="编辑"
+				ToolTip="双击同类词，可直接编辑"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnEdit_Click" />
+			<Button
+				Content="删除"
+				ToolTip="快捷键：Delete"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnDelete_Click" />
+			<Button
+				Name="btnSyn1"
+				Content="同步"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnSyn1_Click" />
+			<Button
+				Name="sbtTest"
+				Content="测试"
+				ToolTip="快捷键：Alt+T"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="sbtTest_Click" />
+            <Button
+				Name="btnChatRecordMgr"
+				Content="聊天记录管理器"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Visibility="Collapsed"
+				Click="btnChatRecordMgr_Click" />
+            <Button
+				Name="btnImport"
+				Content="导入"
+				Background="#FFFFC0CB"
+				ToolTip="导入规则"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnImport_Click" />
+            <Button
+				Content="帮助"
+				Padding="10 5"
+				Margin="15 0 0 0"
+				Click="btnHelp_Click" />
+		</StackPanel>
+		<ProgressBar
+			Name="pbar"
+			Grid.Row="1"
+			Height="15"
+			Margin="0 20"
+			IsIndeterminate="True"
+			Visibility="Collapsed" />
+		<local:CtlRuleViewer
+			x:Name="ctlPubRule"
+			Grid.Row="2" />
+	</Grid>
+</c:EtWindow>
